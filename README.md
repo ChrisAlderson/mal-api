@@ -17,7 +17,6 @@ npm install --save mal-api
 ```js
 const MAL = require('mal-api');
 
-// Options are the request default options.
 const mal = new MAL(username, password, debug);
 ```
 
