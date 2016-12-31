@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/ChrisAlderson/mal-api.svg)](https://david-dm.org/ChrisAlderson/mal-api)
 [![devDependency Status](https://david-dm.org/ChrisAlderson/mal-api/dev-status.svg)](https://david-dm.org/ChrisAlderson/mal-api#info=devDependencies)
 
-A NodeJS webscraper for [MyAnimeList](https://myanimelist.net/).
+A NodeJS wrapper for [MyAnimeList API](https://myanimelist.net/).
 
 ## Usage
 
