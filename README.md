@@ -1,7 +1,7 @@
 # mal-api
 
 [![Build Status](https://travis-ci.org/ChrisAlderson/mal-api.svg?branch=master)](https://travis-ci.org/ChrisAlderson/mal-api)
-[![Coverage Status](https://coveralls.io/repos/github/ChrisAlderson/mal-api.svg?branch=master)](https://coveralls.io/github/ChrisAlderson/mal-api?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/ChrisAlderson/mal-api/badge.svg?branch=master)](https://coveralls.io/github/ChrisAlderson/mal-api?branch=master)
 [![Dependency Status](https://david-dm.org/ChrisAlderson/mal-api.svg)](https://david-dm.org/ChrisAlderson/mal-api)
 [![devDependency Status](https://david-dm.org/ChrisAlderson/mal-api/dev-status.svg)](https://david-dm.org/ChrisAlderson/mal-api#info=devDependencies)
 
