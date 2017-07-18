@@ -145,6 +145,13 @@ Updated
 Deleted
 ```
 
+## Testing
+
+You can run tests with the following npm command:
+```
+ $ npm test
+```
+
 # License
 
 MIT License
