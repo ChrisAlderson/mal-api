@@ -54,7 +54,7 @@ describe('MyAnimeList', () => {
       })
   })
 
-  it('verifyCredentials', done => {
+  it('should verify credentials', done => {
     mal.account.verifyCredentials().then(res => {
       expect(res).to.be.an('object')
       expect(res.id).to.be.a('string')
@@ -64,7 +64,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('searchAnime', done => {
+  it('should search an anime', done => {
     mal.account._helper._debug = false
     mal.anime.searchAnime(animeQuery).then(res => {
       expect(res).to.be.an('array')
@@ -90,7 +90,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('addAnime', done => {
+  it('should add an anime', done => {
     mal.anime.addAnime(animeId, animeData).then(res => {
       expect(res).to.be.a('string')
       expect(res).to.equal(responses.CREATED)
@@ -99,7 +99,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('updateAnime', done => {
+  it('should update an anime', done => {
     mal.anime.updateAnime(animeId, animeData).then(res => {
       expect(res).to.be.a('string')
       expect(res).to.equal(responses.UPDATED)
@@ -108,7 +108,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('deleteAnime', done => {
+  it('should delete an anime', done => {
     mal.anime.deleteAnime(animeId).then(res => {
       expect(res).to.be.a('string')
       expect(res).to.equal(responses.DELETED)
@@ -117,7 +117,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('searchManga', done => {
+  it('should search for a manga', done => {
     mal.manga.searchManga(mangaQuery).then(res => {
       expect(res).to.be.an('array')
       expect(res.length).to.be.at.least(1)
@@ -126,7 +126,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('addManga', done => {
+  it('should add a manga', done => {
     mal.manga.addManga(mangaId, mangaData).then(res => {
       expect(res).to.be.a('string')
       expect(res).to.equal(responses.CREATED)
@@ -135,7 +135,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('updateManga', done => {
+  it('should update a manga', done => {
     mal.manga.updateManga(mangaId, mangaData).then(res => {
       expect(res).to.be.a('string')
       expect(res).to.equal(responses.UPDATED)
@@ -144,7 +144,7 @@ describe('MyAnimeList', () => {
     }).catch(done)
   })
 
-  it('deleteManga', done => {
+  it('should delete a manga', done => {
     mal.manga.deleteManga(mangaId).then(res => {
       expect(res).to.be.a('string')
       expect(res).to.equal(responses.DELETED)
