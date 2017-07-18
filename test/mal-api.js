@@ -24,7 +24,8 @@ describe('MyAnimeList', () => {
     mangaQuery = 'naruto'
     mangaId = 1535
     mangaData = {
-      score: 10
+      score: 10,
+      status: 1
     }
 
     responses = {
@@ -34,17 +35,56 @@ describe('MyAnimeList', () => {
     }
   })
 
+  it('should throw an error when user and pass are null', () => {
+    try {
+      const malApi = new MalAPI()
+      expect(malApi).to.be.an('object')
+    } catch (err) {
+      expect(err).to.be.an('Error')
+    }
+  })
+
+  it('should not parse xml correctly', done => {
+    mal.account._helper._toJSON({})
+      .then(done)
+      .catch(err => {
+        expect(err).to.be.an('Error')
+
+        done()
+      })
+  })
+
   it('verifyCredentials', done => {
     mal.account.verifyCredentials().then(res => {
       expect(res).to.be.an('object')
+      expect(res.id).to.be.a('string')
+      expect(res.username).to.be.a('string')
+
       done()
     }).catch(done)
   })
 
   it('searchAnime', done => {
+    mal.account._helper._debug = false
     mal.anime.searchAnime(animeQuery).then(res => {
       expect(res).to.be.an('array')
       expect(res.length).to.be.at.least(1)
+
+      const random = Math.floor(Math.random() * res.length)
+      const toTest = res[random]
+
+      expect(toTest.id).to.be.a('string')
+      expect(toTest.title).to.be.a('string')
+      expect(toTest.english).to.be.a('string')
+      expect(toTest.synonyms).to.be.a('string')
+      expect(toTest.episodes).to.be.a('string')
+      expect(toTest.score).to.be.a('string')
+      expect(toTest.type).to.be.a('string')
+      expect(toTest.status).to.be.a('string')
+      expect(toTest.start_date).to.be.a('string')
+      expect(toTest.end_date).to.be.a('string')
+      expect(toTest.synopsis).to.be.a('string')
+      expect(toTest.image).to.be.a('string')
 
       done()
     }).catch(done)
