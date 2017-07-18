@@ -15,9 +15,9 @@ npm install --save mal-api
 
 #### Initialize
 ```js
-const MAL = require('mal-api');
+const MAL = require('mal-api')
 
-const mal = new MAL(username, password, debug);
+const mal = new MAL(username, password, debug)
 ```
 
 #### Example usage
@@ -28,7 +28,7 @@ const mal = new MAL(username, password, debug);
 ```js
 mal.account.verifyCredentials()
   .then(res => console.log(res))
-  .catch(err => done(err));
+  .catch(err => done(err))
 ```
 
 ##### Anime
@@ -37,7 +37,7 @@ mal.account.verifyCredentials()
 ```js
 mal.manga.searchManga('naruto')
   .then(res => console.log(res))
-  .catch(err => console.error(err));
+  .catch(err => console.error(err))
 ```
 
 **[add,update,delete]Anime:**
@@ -45,15 +45,15 @@ mal.manga.searchManga('naruto')
 mal.anime.addAnime(1535, {
   score: 10
 }).then(res => {
-  console.log(res);
+  console.log(res)
   return mal.anime.updateAnime(1535, {
     score: 10
-  });
+  })
 }).then(res => {
-  console.log(res);
-  return mal.anime.deleteAnime(1535);
+  console.log(res)
+  return mal.anime.deleteAnime(1535)
 }).then(res => console.log(res))
-  .catch(err => console.error(err));
+  .catch(err => console.error(err))
 ```
 
 ##### Manga
@@ -62,7 +62,7 @@ mal.anime.addAnime(1535, {
 ```js
 mal.manga.searchManga('naruto')
   .then(res => console.log(res))
-  .catch(err => console.error(err));
+  .catch(err => console.error(err))
 ```
 
 **[add,update,delete]Manga:**
@@ -70,15 +70,15 @@ mal.manga.searchManga('naruto')
 mal.manga.addManga(1535, {
   score: 10
 }).then(res => {
-  console.log(res);
+  console.log(res)
   return mal.manga.updateManga(1535, {
     score: 10
-  });
+  })
 }).then(res => {
-  console.log(res);
-  return mal.manga.deleteManga(1535);
+  console.log(res)
+  return mal.manga.deleteManga(1535)
 }).then(res => console.log(res))
-  .catch(err => console.error(err));
+  .catch(err => console.error(err))
 ```
 
 ## Output
@@ -105,7 +105,7 @@ mal.manga.addManga(1535, {
   "status": "Finished Airing",
   "start_date": "2002-10-03",
   "end_date": "2007-02-08",
-  "synopsis": "Moments prior to Naruto Uzumaki&#039;s birth, a huge demon known as the Kyuubi, the Nine-Tailed Fox, attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc. In order to put an end to the Kyuubi&#039;s rampage, the leader of the village, the Fourth Hokage, sacrificed his life and sealed the monstrous beast inside the newborn Naruto.<br />\r\n<br />\r\nNow, Naruto is a hyperactive and knuckle-headed ninja still living in Konohagakure. Shunned because of the Kyuubi inside him, Naruto struggles to find his place in the village, while his burning desire to become the Hokage of Konohagakure leads him not only to some great new friends, but also some deadly foes.<br />\r\n<br />\r\n[Written by MAL Rewrite]",
+  "synopsis": "Moments prior to Naruto Uzumaki&#039s birth, a huge demon known as the Kyuubi, the Nine-Tailed Fox, attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc. In order to put an end to the Kyuubi&#039s rampage, the leader of the village, the Fourth Hokage, sacrificed his life and sealed the monstrous beast inside the newborn Naruto.<br />\r\n<br />\r\nNow, Naruto is a hyperactive and knuckle-headed ninja still living in Konohagakure. Shunned because of the Kyuubi inside him, Naruto struggles to find his place in the village, while his burning desire to become the Hokage of Konohagakure leads him not only to some great new friends, but also some deadly foes.<br />\r\n<br />\r\n[Written by MAL Rewrite]",
   "image": "https://myanimelist.cdn-dena.com/images/anime/13/17405.jpg"
 }]
 ```
@@ -124,7 +124,7 @@ mal.manga.addManga(1535, {
   "status": "Finished",
   "start_date": "1999-09-21",
   "end_date": "2014-11-10",
-  "synopsis": "Before Naruto&#039;s birth, a great demon fox had attacked the Hidden Leaf Village. A man known as the 4th Hokage sealed the demon inside the newly born Naruto, causing him to unknowingly grow up detested by his fellow villagers. Despite his lack of talent in many areas of ninjutsu, Naruto strives for only one goal: to gain the title of Hokage, the strongest ninja in his village. Desiring the respect he never received, Naruto works toward his dream with fellow friends Sasuke and Sakura and mentor Kakashi as they go through many trials and battles that come with being a ninja.",
+  "synopsis": "Before Naruto&#039s birth, a great demon fox had attacked the Hidden Leaf Village. A man known as the 4th Hokage sealed the demon inside the newly born Naruto, causing him to unknowingly grow up detested by his fellow villagers. Despite his lack of talent in many areas of ninjutsu, Naruto strives for only one goal: to gain the title of Hokage, the strongest ninja in his village. Desiring the respect he never received, Naruto works toward his dream with fellow friends Sasuke and Sakura and mentor Kakashi as they go through many trials and battles that come with being a ninja.",
   "image": "https://myanimelist.cdn-dena.com/images/manga/3/117681.jpg"
 }]
 ```
