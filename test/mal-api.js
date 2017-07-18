@@ -1,105 +1,115 @@
-'use strict';
+'use strict'
 
-const { assert } = require('chai');
-
-const MalAPI = require('../mal-api');
+const { expect } = require('chai')
+const MalAPI = require('../mal-api')
 
 describe('MyAnimeList', () => {
 
-  let mal, animeQuery, animeId, animeData, mangaQuery, mangaId, mangaData, responses;
+  let mal, animeQuery, animeId, animeData, mangaQuery, mangaId, mangaData, responses
+
   before(() => {
+    console.warn = () => {}
     mal = new MalAPI(
       process.env.MAL_USER,
       process.env.MAL_PASS,
-      false
-    );
+      true
+    )
 
-    animeQuery = 'naruto';
-    animeId = 21;
+    animeQuery = 'naruto'
+    animeId = 21
     animeData = {
       score: 10
-    };
+    }
 
-    mangaQuery = 'naruto';
-    mangaId = 1535;
+    mangaQuery = 'naruto'
+    mangaId = 1535
     mangaData = {
       score: 10
-    };
+    }
 
     responses = {
       CREATED: 'Created',
       UPDATED: 'Updated',
       DELETED: 'Deleted'
-    };
-  });
+    }
+  })
 
   it('verifyCredentials', done => {
     mal.account.verifyCredentials().then(res => {
-      assert.isObject(res);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.an('object')
+      done()
+    }).catch(done)
+  })
 
   it('searchAnime', done => {
     mal.anime.searchAnime(animeQuery).then(res => {
-      assert.isArray(res);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.an('array')
+      expect(res.length).to.be.at.least(1)
+
+      done()
+    }).catch(done)
+  })
 
   it('addAnime', done => {
     mal.anime.addAnime(animeId, animeData).then(res => {
-      assert.isString(res);
-      assert(res === responses.CREATED);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.a('string')
+      expect(res).to.equal(responses.CREATED)
+
+      done()
+    }).catch(done)
+  })
 
   it('updateAnime', done => {
     mal.anime.updateAnime(animeId, animeData).then(res => {
-      assert.isString(res);
-      assert(res === responses.UPDATED);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.a('string')
+      expect(res).to.equal(responses.UPDATED)
+
+      done()
+    }).catch(done)
+  })
 
   it('deleteAnime', done => {
     mal.anime.deleteAnime(animeId).then(res => {
-      assert.isString(res);
-      assert(res === responses.DELETED);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.a('string')
+      expect(res).to.equal(responses.DELETED)
+
+      done()
+    }).catch(done)
+  })
 
   it('searchManga', done => {
     mal.manga.searchManga(mangaQuery).then(res => {
-      assert.isArray(res);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.an('array')
+      expect(res.length).to.be.at.least(1)
+
+      done()
+    }).catch(done)
+  })
 
   it('addManga', done => {
     mal.manga.addManga(mangaId, mangaData).then(res => {
-      assert.isString(res);
-      assert(res === responses.CREATED);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.a('string')
+      expect(res).to.equal(responses.CREATED)
+
+      done()
+    }).catch(done)
+  })
 
   it('updateManga', done => {
     mal.manga.updateManga(mangaId, mangaData).then(res => {
-      assert.isString(res);
-      assert(res === responses.UPDATED);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.a('string')
+      expect(res).to.equal(responses.UPDATED)
+
+      done()
+    }).catch(done)
+  })
 
   it('deleteManga', done => {
     mal.manga.deleteManga(mangaId).then(res => {
-      assert.isString(res);
-      assert(res === responses.DELETED);
-      done();
-    }).catch(err => done(err));
-  });
+      expect(res).to.be.a('string')
+      expect(res).to.equal(responses.DELETED)
 
-});
+      done()
+    }).catch(done)
+  })
+})
