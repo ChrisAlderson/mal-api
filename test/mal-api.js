@@ -4,7 +4,6 @@ const { expect } = require('chai')
 const MalAPI = require('../mal-api')
 
 describe('MyAnimeList', () => {
-
   let mal, animeQuery, animeId, animeData, mangaQuery, mangaId, mangaData, responses
 
   before(() => {
