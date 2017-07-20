@@ -64,7 +64,10 @@ describe('MyAnimeList', () => {
   })
 
   it('should search an anime', done => {
-    mal.account._helper._debug = false
+    mal = new MalAPI(
+      process.env.MAL_USER,
+      process.env.MAL_PASS
+    )
     mal.anime.searchAnime(animeQuery).then(res => {
       expect(res).to.be.an('array')
       expect(res.length).to.be.at.least(1)
