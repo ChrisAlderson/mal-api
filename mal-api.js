@@ -10,8 +10,7 @@ const Manga = require('./lib/Manga')
  * A NodeJS wrapper for MyAnimeList API.
  * @type {MalApi}
  */
-// module.exports = class MalApi {
-export default class MalApi {
+module.exports = class MalApi {
 
   /**
    * Create a new instance of the module.
