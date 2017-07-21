@@ -6,7 +6,17 @@ const MalApi = require('../mal-api')
 
 /** @test {Item} */
 describe('Item', () => {
-  let mal, responses
+  /**
+   * The MalApi instance.
+   * @type {EztvApi}
+   */
+  let mal
+
+  /**
+   * Object which holds the valid responses for the C*UD options.
+   * @type {Object}
+   */
+  let responses
 
   /**
    * Hook for setting up the Item tests.
@@ -44,13 +54,29 @@ describe('Item', () => {
 
   /** @test {Anime} */
   describe('Anime', () => {
-    let animeQuery, animeId, animeData
+    /**
+     * The anime to search for.
+     * @type {string}
+     */
+    let animeQuery
+
+    /** 
+     * The id of the anime to execute the CRUD operations.
+     * @type {Object}
+     */
+    let animeId
+
+    /**
+     * Data to be send with the C*UD requests.
+     * @type {Object}
+     */
+    let animeData
 
     /**
      * Hook for setting up the Anime tests.
      * @type {Function}
      */
-    before(() => {
+    before(done => {
       mal = new MalApi(
         process.env.MAL_USER,
         process.env.MAL_PASS,
@@ -62,6 +88,10 @@ describe('Item', () => {
       animeData = {
         score: 10
       }
+
+      mal.account.verifyCredentials()
+        .then(res => done())
+        .catch(done)
     })
 
     /** @test {Anime#searchAnime} */
@@ -113,13 +143,29 @@ describe('Item', () => {
 
   /** @test {Manga} */
   describe('Manga', () => {
-    let mangaQuery, mangaId, mangaData
+    /**
+     * The manga to search for.
+     * @type {string}
+     */
+    let mangaQuery
+
+    /** 
+     * The id of the manga to execute the CRUD operations.
+     * @type {Object}
+     */
+    let mangaId
+
+    /**
+     * Data to be send with the C*UD requests.
+     * @type {Object}
+     */
+    let mangaData
 
     /**
      * Hook for setting up the Manga tests.
      * @type {Function}
      */
-    before(() => {
+    before(done => {
       mal = new MalApi(
         process.env.MAL_USER,
         process.env.MAL_PASS,
@@ -132,6 +178,10 @@ describe('Item', () => {
         score: 10,
         status: 1
       }
+
+      mal.account.verifyCredentials()
+        .then(res => done())
+        .catch(done)
     })
 
     /** @test {Manga#searchManga} */

@@ -4,8 +4,12 @@
 const { expect } = require('chai')
 const MalApi = require('../mal-api')
 
-/** @test {MalApi} */
+/** @test {Account} */
 describe('Account', () => {
+  /**
+   * The MalApi instance.
+   * @type {EztvApi}
+   */
   let mal
 
   /**
