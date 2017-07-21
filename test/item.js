@@ -23,6 +23,25 @@ describe('Item', () => {
     }
   })
 
+  /**
+   * Test if an item has certain attributes.
+   * @param {Object} item - The item to test.
+   * @returns {undefined}
+   */
+  function testItemAttributes(item) {
+    expect(item.id).to.be.a('string')
+    expect(item.title).to.be.a('string')
+    expect(item.english).to.be.a('string')
+    expect(item.synonyms).to.be.a('string')
+    expect(item.score).to.be.a('string')
+    expect(item.type).to.be.a('string')
+    expect(item.status).to.be.a('string')
+    expect(item.start_date).to.be.a('string')
+    expect(item.end_date).to.be.a('string')
+    expect(item.synopsis).to.be.a('string')
+    expect(item.image).to.be.a('string')
+  }
+
   /** @test {Anime} */
   describe('Anime', () => {
     let animeQuery, animeId, animeData
@@ -52,20 +71,10 @@ describe('Item', () => {
         expect(res.length).to.be.at.least(1)
 
         const random = Math.floor(Math.random() * res.length)
-        const toTest = res[random]
+        const item = res[random]
 
-        expect(toTest.id).to.be.a('string')
-        expect(toTest.title).to.be.a('string')
-        expect(toTest.english).to.be.a('string')
-        expect(toTest.synonyms).to.be.a('string')
-        expect(toTest.episodes).to.be.a('string')
-        expect(toTest.score).to.be.a('string')
-        expect(toTest.type).to.be.a('string')
-        expect(toTest.status).to.be.a('string')
-        expect(toTest.start_date).to.be.a('string')
-        expect(toTest.end_date).to.be.a('string')
-        expect(toTest.synopsis).to.be.a('string')
-        expect(toTest.image).to.be.a('string')
+        testItemAttributes(item)
+        expect(item.episodes).to.be.a('string')
 
         done()
       }).catch(done)
@@ -130,6 +139,13 @@ describe('Item', () => {
       mal.manga.searchManga(mangaQuery).then(res => {
         expect(res).to.be.an('array')
         expect(res.length).to.be.at.least(1)
+
+        const random = Math.floor(Math.random() * res.length)
+        const item = res[random]
+
+        testItemAttributes(item)
+        expect(item.chapters).to.be.a('string')
+        expect(item.volumes).to.be.a('string')
 
         done()
       }).catch(done)
