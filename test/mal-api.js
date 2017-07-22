@@ -6,6 +6,10 @@ const MalApi = require('../mal-api')
 
 /** @test {MalApi} */
 describe('MyAnimeList', () => {
+  /**
+   * The MalApi instance.
+   * @type {MalApi}
+   */
   let mal
 
   /**

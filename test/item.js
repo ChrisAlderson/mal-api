@@ -6,7 +6,17 @@ const MalApi = require('../mal-api')
 
 /** @test {Item} */
 describe('Item', () => {
-  let mal, responses
+  /**
+   * The MalApi instance.
+   * @type {MalApi}
+   */
+  let mal
+
+  /**
+   * The C*UD responses.
+   * @type {Object}
+   */
+  let responses
 
   /**
    * Hook for setting up the Item tests.

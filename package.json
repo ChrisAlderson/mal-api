@@ -21,7 +21,7 @@
   "license": "MIT",
   "scripts": {
     "coveralls": "cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls",
-    "lint": "./node_modules/.bin/eslint test/** eztv-api-pt.js",
+    "lint": "./node_modules/.bin/eslint {lib,test}/** mal-api.js",
     "test": "./node_modules/.bin/nyc --reporter=lcov --reporter=text ./node_modules/.bin/mocha --timeout 15000 --reporter spec test/**"
   },
   "engines": {
