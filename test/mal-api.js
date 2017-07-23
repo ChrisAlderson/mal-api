@@ -5,7 +5,7 @@ const { expect } = require('chai')
 const MalApi = require('../mal-api')
 
 /** @test {MalApi} */
-describe('MyAnimeList', () => {
+describe('MalApi', () => {
   /**
    * The MalApi instance.
    * @type {MalApi}
@@ -42,16 +42,5 @@ describe('MyAnimeList', () => {
 
         done()
       })
-  })
-
-  /** @test {Account#verifyCredentials} */
-  it('should verify credentials', done => {
-    mal.account.verifyCredentials().then(res => {
-      expect(res).to.be.an('object')
-      expect(res.id).to.be.a('string')
-      expect(res.username).to.be.a('string')
-
-      done()
-    }).catch(done)
   })
 })

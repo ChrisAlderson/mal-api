@@ -20,7 +20,12 @@ npm install --save mal-api
 ```js
 const MAL = require('mal-api')
 
-const mal = new MAL(username, password, debug)
+// Create a new instance of the module.
+const mal = new MAL(
+  username, // The username of the user.
+  password, // The password of the user.
+  debug // Show extra output. Defaults to 'false'
+)
 ```
 
 #### Example usage
