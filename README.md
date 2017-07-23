@@ -156,7 +156,7 @@ Deleted
 
 You can run tests with the following npm command:
 ```
- $ npm test
+ $ MAL_USER=[Your username] MAL_PASS=[Your password] npm test
 ```
 
 # License
