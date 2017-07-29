@@ -18,13 +18,13 @@ npm install --save mal-api
 
 #### Initialize
 ```js
-const MAL = require('mal-api')
+const MalApi = require('mal-api')
 
 // Create a new instance of the module.
-const mal = new MAL(
+const mal = new MalApi(
   username, // The username of the user.
   password, // The password of the user.
-  debug // Show extra output. Defaults to 'false'
+  debug // Show extra output. Defaults to 'false'.
 )
 ```
 
