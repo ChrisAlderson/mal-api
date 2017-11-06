@@ -1,8 +1,7 @@
-'use strict'
-
 // Import the necessary modules.
 const { expect } = require('chai')
-const MalApi = require('../mal-api')
+
+const MalApi = require('..')
 
 /** @test {MalApi} */
 describe('MalApi', () => {
@@ -17,16 +16,16 @@ describe('MalApi', () => {
    * @type {Function}
    */
   before(() => {
-    mal = new MalApi(
-      process.env.MAL_USER,
-      process.env.MAL_PASS
-    )
+    mal = new MalApi({
+      username: process.env.MAL_USER,
+      password: process.env.MAL_PASS
+    })
   })
 
   /** @test {MalApi#constructor} */
   it('should throw an error when user and pass are null', () => {
     try {
-      const malApi = new MalApi()
+      const malApi = new MalApi({})
       expect(malApi).to.be.an('object')
     } catch (err) {
       expect(err).to.be.an('Error')

@@ -1,5 +1,3 @@
-'use strict'
-
 // Import the necessary modules.
 const Account = require('./lib/Account')
 const Anime = require('./lib/Anime')
@@ -14,12 +12,12 @@ module.exports = class MalApi {
 
   /**
    * Create a new instance of the module.
-   * @param {!string} user - The username of the user.
-   * @param {!string} pass - The password of the user.
-   * @param {?boolean} [debug=false] - Show extra output.
+   * @param {!Object} options - The options for the Mal API.
+   * @param {!string} options.username - The username of the user.
+   * @param {!string} options.password - The password of the user.
    */
-  constructor(user, pass, debug = false) {
-    const helper = new Helper(user, pass, debug)
+  constructor({username, password}) {
+    const helper = new Helper({username, password})
 
     /**
      * The account section of the module.

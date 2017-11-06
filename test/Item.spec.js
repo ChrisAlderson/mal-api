@@ -1,8 +1,7 @@
-'use strict'
-
 // Import the necessary modules.
 const { expect } = require('chai')
-const MalApi = require('../mal-api')
+
+const MalApi = require('..')
 
 /** @test {Item} */
 describe('Item', () => {
@@ -23,9 +22,6 @@ describe('Item', () => {
    * @type {Function}
    */
   before(() => {
-    // Disable the warn logging function to testing.
-    console.warn = () => {}
-
     responses = {
       CREATED: 'Created',
       UPDATED: 'Updated',
@@ -77,11 +73,10 @@ describe('Item', () => {
      * @type {Function}
      */
     before(done => {
-      mal = new MalApi(
-        process.env.MAL_USER,
-        process.env.MAL_PASS,
-        true
-      )
+      mal = new MalApi({
+        username: process.env.MAL_USER,
+        password: process.env.MAL_PASS
+      })
 
       animeQuery = 'naruto'
       animeId = 21
@@ -166,11 +161,10 @@ describe('Item', () => {
      * @type {Function}
      */
     before(done => {
-      mal = new MalApi(
-        process.env.MAL_USER,
-        process.env.MAL_PASS,
-        false
-      )
+      mal = new MalApi({
+        username: process.env.MAL_USER,
+        password: process.env.MAL_PASS
+      })
 
       mangaQuery = 'naruto'
       mangaId = 1535

@@ -3,25 +3,22 @@
   "version": "1.0.0",
   "description": "A NodeJS wrapper for MyAnimeList API.",
   "dependencies": {
+    "debug": "^3.1.0",
     "got": "^7.1.0",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "chai": "^4.1.0",
-    "coveralls": "^2.13.1",
-    "eslint": "^4.3.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^3.4.2",
-    "nyc": "^11.1.0"
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.10.0",
+    "eslint-config-vixo": "^2.0.0",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0"
   },
   "license": "MIT",
   "scripts": {
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls",
-    "lint": "./node_modules/.bin/eslint {lib,test}/** mal-api.js",
+    "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls",
+    "lint": "./node_modules/.bin/eslint {examples,lib,test}/** mal-api.js",
     "test": "./node_modules/.bin/nyc --reporter=lcov --reporter=text ./node_modules/.bin/mocha --timeout 15000 --reporter spec test/**"
   },
   "engines": {
@@ -33,7 +30,7 @@
     "api",
     "myanimelist"
   ],
-  "main": "mal-api.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ChrisAlderson/mal-api.git"

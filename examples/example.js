@@ -1,7 +1,6 @@
-'use strict'
-
 // Import the necessary modules.
-const MalAPI = require('../mal-api')
+/* eslint-disable no-console */
+const MalAPI = require('..')
 
 // Create a new instance of the module.
 const mal = new MalAPI(

@@ -1,8 +1,7 @@
-'use strict'
-
 // Import the necessary modules.
 const { expect } = require('chai')
-const MalApi = require('../mal-api')
+
+const MalApi = require('..')
 
 /** @test {Account} */
 describe('Account', () => {
@@ -17,10 +16,10 @@ describe('Account', () => {
    * @type {Function}
    */
   before(() => {
-    mal = new MalApi(
-      process.env.MAL_USER,
-      process.env.MAL_PASS
-    )
+    mal = new MalApi({
+      username: process.env.MAL_USER,
+      password: process.env.MAL_PASS
+    })
   })
 
   /** @test {Account#verifyCredentials} */
