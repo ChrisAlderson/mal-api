@@ -1,9 +1,18 @@
 # mal-api
 
-[![Build Status](https://travis-ci.org/ChrisAlderson/mal-api.svg?branch=master)](https://travis-ci.org/ChrisAlderson/mal-api)
-[![Coverage Status](https://coveralls.io/repos/github/ChrisAlderson/mal-api/badge.svg?branch=master)](https://coveralls.io/github/ChrisAlderson/mal-api?branch=master)
-[![Dependency Status](https://david-dm.org/ChrisAlderson/mal-api.svg)](https://david-dm.org/ChrisAlderson/mal-api)
-[![devDependency Status](https://david-dm.org/ChrisAlderson/mal-api/dev-status.svg)](https://david-dm.org/ChrisAlderson/mal-api?type=dev)
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coverage-image]][coverage-url]
+[![Dependency Status][david-image]][david-url]
+[![devDependency Status][dev-david-image]][dev-david-url]
+
+[travis-url]: https://travis-ci.org/ChrisAlderson/mal-api
+[travis-image]: https://travis-ci.org/ChrisAlderson/mal-api.svg?branch=master
+[coverage-url]: https://coveralls.io/github/ChrisAlderson/mal-api?branch=master
+[coverage-image]: https://coveralls.io/repos/github/ChrisAlderson/mal-api/badge.svg?branch=master
+[david-url]: https://david-dm.org/ChrisAlderson/mal-api
+[david-image]: https://david-dm.org/ChrisAlderson/mal-api.svg
+[dev-david-url]: https://david-dm.org/ChrisAlderson/mal-api?type=dev
+[dev-david-image]: https://david-dm.org/ChrisAlderson/mal-api/dev-status.svg
 
 A NodeJS wrapper for [MyAnimeList API](https://myanimelist.net/). For more
 more information you can check the API documentation of
